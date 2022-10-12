@@ -1,0 +1,7 @@
+//Instalar Interface grafica do hamachi o haguichi
+
+add-apt-repository ppa:ztefn/haguichi-stable
+
+apt update
+
+apt install haguichi

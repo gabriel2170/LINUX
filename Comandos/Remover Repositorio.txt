@@ -1,0 +1,3 @@
+//Remover repositorio
+
+apt-add-repository --remove repositorio-a-ser-incluido

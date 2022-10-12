@@ -1,0 +1,4 @@
+
+//Adicionar Usuario
+
+useradd -m nome do usuario

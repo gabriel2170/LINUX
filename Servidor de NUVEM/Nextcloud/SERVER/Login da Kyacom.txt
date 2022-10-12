@@ -1,0 +1,10 @@
+//Login Nextcloud Kyacom
+
+
+coloque o ip 192.168.1.6 no navegador 
+
+-email
+kyacomserver@gmail.com
+
+-senha
+Tiodo753951@

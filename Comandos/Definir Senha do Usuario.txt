@@ -1,0 +1,3 @@
+//Definir Senha do Usuario
+
+passwd nome do usuario 

@@ -1,0 +1,52 @@
+//Instalar servidor FTP vsftpd
+
+apt install vsftpd
+
+
+//Habilitar portas do firewall
+
+ufw enable
+ufw allow 20/tcp
+ufw allow 21/tcp
+ufw allow 40000:50000/tcp
+ufw allow 990/tcp
+
+-voce pode usar tambem o ufw status para checar se as portas liberadas
+
+
+//Configure o servidor FTP 
+
+nano /etc/vsftpd.conf
+
+-Descomente se estiver comentado e adicione no final do arquivo algum item que estiver faltando 
+da lista abaixo, e mude os itens deixando igual ao da lista abaixo se estiver diferente
+
+listen=NO
+listen_ipv6=YES
+anonumous_enable=NO
+local_enable=YES
+write_enable=YES
+local_umask=022
+dirmessage_enable=YES
+use_localtime=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+chroot_local_user=YES
+secure_chroot_dir=/var/run/vsftpd/empty
+pam_service_name=vsftpd
+force_dot_files=YES
+ssl_enable=YES
+utf8_filesystem=YES
+pasv_min_port=40000
+pasv_max_port=50000
+
+
+-apos isso so clicar em ctrl+X e confirmar com yes para salvar o arquivo
+
+//Reinicie o servico do Servidor FTP 
+
+systemctl restart vsftpd
+
+
+-E pronto agora so testar a conexao no Filezilla do windows ou de um linux 
+

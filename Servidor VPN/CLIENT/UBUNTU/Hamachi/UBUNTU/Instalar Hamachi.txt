@@ -1,0 +1,8 @@
+//Instalar hamachi 
+
+-va ate o site e baixe o pacote .deb do hamachi, clique para salvar em download e depois use 
+esse comando 
+
+dpkg -i nome do pacote .deb
+
+apt update

@@ -1,0 +1,13 @@
+//Instalar o servidor de Backup URbackup
+
+sudo add-apt-repository ppa:uroni/urbackup
+
+sudo apt update
+
+sudo apt install urbackup-server
+
+-Depois da instalacao acesse o servidor no navegador atraves de localhost:55414 ou atraves de outro pc
+usando IP Servidor:55414
+
+-E em seguida instale e configue o aplicatico client do URbackup no windows dos pcs que faram o 
+backup 

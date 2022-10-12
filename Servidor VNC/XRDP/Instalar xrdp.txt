@@ -1,0 +1,57 @@
+//Instalar XRDP VNC 
+
+apt -y install xrdp tigervnc-standalone-server
+
+
+
+//Habilitar inicializacao do XRDP VNC ao iniciar Linux
+
+systemctl enable xrdp
+
+//Libere a porta de servico do XRDP
+
+ufw allow 3389
+
+
+
+//Configure o arquivo de sessao do xrdp 
+
+nano /etc/xrdp/startwm.sh
+
+-No final do arquivo procure pelo primeiro if e apos ele coloque os dados igual da forma abaixo
+----------------------------------------------------
+if test -r /etc/profile; then
+ xfce-session
+
+        . /etc/profile
+
+ xfce-session
+
+fi
+
+ xfce-session
+
+unset DBUS_SESSION_BUS_ADDRESS
+unset XDG_RUNTIME_DIR
+
+test -x /etc/X11/Xsession && exec /etc/X11/Xsession
+exec /bin/sh /etc/X11/Xsession
+-----------------------------------------------------
+
+
+//Metodo para inicializar ele em xfce 
+
+-certifique que o linux esteja com xfce instalado , senao voce tera que fazer a instalacao antes 
+
+apt-get install xfce4* 
+
+-E caso haja outro ambiente desktop padrao como o gnome por exemplo instalado , remova tudo desse ambiente 
+enquanto estiver logado no xfce , deixando apenas o xfce como unico ambiente do linux 
+
+apt-get autoremove gnome* 
+
+apt-get update 
+
+reboot 
+
+

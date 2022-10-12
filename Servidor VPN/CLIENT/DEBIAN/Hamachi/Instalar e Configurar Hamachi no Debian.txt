@@ -1,0 +1,42 @@
+//Instalacao e Configuracao do Hamachi no Debian
+
+-Instalar pacote hamachi
+
+dpkg -i  pacote_do_hamachi.deb
+
+
+-Veja o status do hamachi
+
+/bin/hamachi 
+
+
+
+-Faça o login inicial do hamachi 
+
+/bin/hamachi login
+
+
+
+-Defina um nome para seu usuario do Hamachi 
+
+/bin/hamachi set-nick  nome_do_usuario
+
+
+
+-Para entrar em uma rede do hamachi 
+
+/bin/hamachi join  nome_da_rede  senha_da_rede
+
+
+
+
+-Para criar uma rede hamachi 
+
+/bin/hamachi create  nome_da_rede  senha_da_rede
+
+
+
+-Se caso voce precisar de mais comandos no hamachi basta colocar o seguinte comando 
+que ele ira filtrar todos os comandos 
+
+/bin/hamachi --help

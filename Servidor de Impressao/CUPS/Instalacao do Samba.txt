@@ -1,0 +1,20 @@
+//Instalar o cliente do servidor de arquivos SAMBA
+
+apt-get install smbclient
+
+apt-get update
+
+
+//Configuracao do servidor de impressao SAMBA
+
+
+-Mudar o guest ok para yes
+
+[printers]
+    comment = All Printers
+    browseable = no
+    path = /var/spool/samba
+    printable = yes
+    guest ok = yes
+    read only = yes
+    create mask = 0700

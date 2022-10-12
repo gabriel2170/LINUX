@@ -1,0 +1,16 @@
+//Instale as dependencias do DuckDNS
+
+apt-get install zenity cron curl
+
+
+-tem um arquivo separado do DuckDNS, coloque ele de preferencia na pasta Downloads para instalacao
+
+
+//Depois de permissao para execucao no arquivo .sh do DuckDNS 
+
+chmod +x duck-setup-gui.sh
+
+
+//Apos isso rode o arquivo .sh
+
+./duck-setup-gui.sh

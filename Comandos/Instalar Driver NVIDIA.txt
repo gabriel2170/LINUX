@@ -1,0 +1,17 @@
+//Editar arquivo sources.list 
+
+nano /etc/apt/sources.list
+
+-Adicione o non-free 
+
+deb http://deb.debian.org/debian/ bullseye main contrib non-free
+
+//Instale o driver da Nvidia
+
+apt update
+
+apt -y install nvidia-driver firmware-misc-nonfree
+
+//reinicie o pc apos a instalacao
+
+reboot

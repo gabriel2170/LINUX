@@ -1,0 +1,23 @@
+//Instalar client nextcloud no linux 
+
+-Ao baixar o arquivo appImage no nextcloud coloque ele em uma pasta , de preferencia
+dentro de documentos 
+
+-Depois de permissao geral para o arquivo 
+
+chmod 777 nome do arquivo.AppImage
+
+-clique com o botao direito no arquivo e depois marque a opcao permissao para executar
+como aplicativo 
+
+-Apos isso abra o aplicativo, na janela a seguir crie uma conta na segunda opcao 
+
+-Apos criar a conta no email vai haver o link no site para acessar atraves do servidor
+criado
+
+-Abra o app denovo e clique agora na segunda opcao , la voce pode colocar o dominio 
+padrao para acessar o servidor web do nextcloud ou o ip do servidor que voce configurar 
+por conta 
+
+
+dominio padrao: https://ppp.woelkli.com/

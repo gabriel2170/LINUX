@@ -1,0 +1,67 @@
+//Instalar o Samba
+
+dnf -y install samba
+
+
+//Configurar a Pasta compartilhada e o grupo que vai ter permissao de acesso da pasta
+
+groupadd nome do grupo
+
+mkdir /home/nome do arquivo
+
+chgrp nome do grupo /home/nome do arquivo
+
+chmod 770 /home/nome do arquivo
+
+
+//Configurar o Samba
+
+nano /etc/samba/smb.conf
+
+
+
+-colocar WORKGROUP no campo workgroup
+-e no campo hosts allow, coloque o endereco IP do PC que esta com o servidor
+
+[global]
+    - Adicione na primeira linha o unix charset
+   unix charset = UTF-8
+
+   - Mude para WORKGROUP
+   workgroup = WORKGROUP
+
+   - Coloque o IP do servidor logo abaixo
+   interfaces = 127.0.0.0/8 10.0.0.0/24
+
+   - Adicione abaixo de map to guest o security
+   #map to guest = bad user
+   security = user
+ 
+
+
+-Adicione a pasta que sera compartilhada no samba [nome do arquivo] e ja inserindo o nome do arquivo dentro do []
+-e logo apos colocar os parametros abaixo 
+
+[nome do arquivo]
+
+        path = /home/nome do arquivo
+        writable = yes
+        guest ok = no
+        valid users = @nome do grupo
+        force create mode = 777
+        force directory mode = 777
+        inherit permissions = yes 
+
+
+//Criar permissao do servico do Samba no SElinux
+
+systemctl enable --now smb
+
+
+//Adicionar usuario e senha de acesso do Samba
+
+useradd nome do usuario
+
+smbpasswd -a nome do usuario
+
+usermod -G nome_do_grupo  nome_do_usuario

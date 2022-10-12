@@ -1,0 +1,3 @@
+//Adicionar Repositorio 
+
+apt-add-repository repositorio-a-ser-incluido

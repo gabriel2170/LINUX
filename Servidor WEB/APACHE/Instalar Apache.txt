@@ -1,0 +1,46 @@
+//Instalar o Apache
+
+apt -y install apache2
+
+
+
+//Configurar protocolo de seguranca
+
+nano /etc/apache2/conf-enabled/security.conf
+
+-Mude o ServerTokens para Prod
+
+ServerTokens Prod
+
+
+
+//Configurar Diretorio com Conteudo a ser reproduzido no apache
+
+nano /etc/apache2/mods-enabled/dir.conf
+
+-Adicione o arquivo html ou php que vai ser reproduzido no apache no campo DirectoryIndex
+
+DirectoryIndex index.html index.htm
+
+
+
+//Configurar o Apache
+
+nano /etc/apache2/apache2.conf
+
+-Coloque um nome para o servidor web no campo ServerName
+
+ServerName www.srv.world
+
+//Configurando paremetro padrao do servidor
+
+nano /etc/apache2/sites-enabled/000-default.conf
+
+-mude para webmaster no campo ServerAdmin
+
+ServerAdmin webmaster@srv.world
+
+
+//Reiniciar o servico apache
+
+systemctl restart apache2

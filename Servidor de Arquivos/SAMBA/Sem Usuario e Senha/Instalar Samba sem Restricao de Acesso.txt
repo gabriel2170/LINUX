@@ -1,0 +1,48 @@
+//Instalar o Samba
+
+apt-get -y install samba
+
+
+//Configurar a Pasta compartilhada
+
+mkdir /home/nome do arquivo
+
+chmod 770 /home/nome do arquivo
+
+
+
+//Configurar o Samba
+
+nano /etc/samba/smb.conf
+
+
+-Adicionar o unix charset = UTF-8
+-Colocar WORKGROUP no campo workgroup
+-E no campo hosts allow, coloque o endereco IP do PC que esta com o servidor
+
+[global]
+        
+        unix charset = UTF-8
+        workgroup = WORKGROUP
+	interfaces = IP do PC com servidor de arquivos
+        map to guest = bad user
+   	security = user
+       
+
+
+-Adicione a pasta que sera compartilhada no samba [nome do arquivo] e ja inserindo o nome do arquivo dentro do []
+-e logo apos colocar os parametros abaixo 
+
+[nome do arquivo]
+
+        path = /home/nome do arquivo
+        writable = yes
+        guest ok = yes      
+        force create mode = 777
+        force directory mode = 777
+        inherit permissions = yes 
+
+
+//Reiniciar servico do Samba
+
+systemctl restart smbd

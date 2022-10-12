@@ -1,0 +1,54 @@
+//Instalar o gerenciador de pacotes snap
+
+apt install snap
+
+
+
+//Instalar servidor nextcloud 
+
+snap install nextcloud
+
+
+
+//Configurar usuario/email e senha no nextcloud
+
+nextcloud.manual-install usuario/email senha
+
+
+
+//Retirando restricao de dominios confiaveis 
+
+-----------------------------------------------
+-consulta dos dominios confiaveis 
+
+nextcloud.occ config:system:get trusted_domains
+-----------------------------------------------
+-adicionando dominios 
+
+nextcloud.occ config:system:set trusted_domains 1 --value=ip do servidor e ip externo
+-----------------------------------------------
+-consulta dos dominios confiaveis
+
+nextcloud.occ config:system:get trusted_domains
+-----------------------------------------------
+
+
+
+//Liberar portas do nextcloud no firewall
+
+ufw allow 80,443/tcp
+
+nextcloud.enable-https lets-encrypt
+
+-apos isso confirmar com yes (y) e depois colocar o email e o ip do servidor 
+
+
+
+//Configurar certificado autoassinado
+
+nextcloud.enable-https self-signed
+
+
+
+
+

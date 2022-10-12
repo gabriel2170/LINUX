@@ -1,0 +1,5 @@
+//Instalar gerenciador de pacote de drivers foomatic
+
+apt-get install foomatic-gui foomatic-db
+
+apt-get update

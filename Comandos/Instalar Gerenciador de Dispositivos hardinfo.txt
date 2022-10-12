@@ -1,0 +1,8 @@
+//Instalar Gerenciador de Dispositivos Hardinfo
+
+apt install hardinfo
+
+apt update
+
+-Apos instalacao so buscar pelo aplicativo na guia de aplicativos e abrir 
+

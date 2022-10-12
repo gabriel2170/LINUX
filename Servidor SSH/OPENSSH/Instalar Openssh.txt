@@ -1,0 +1,31 @@
+//Instalar o Servidor SSH e o client tambem
+
+apt install openssh-server openssh-client
+
+//Configure o Servidor SSH 
+
+nano /etc/ssh/sshd_config
+
+-se voce quizer bloquear o usuario root para nao fazer acesso mude o item baixo dessa forma,
+caso contrario nao precisa
+
+PermitRootLogin no
+
+
+-Procure pelo item Port 22 e descomente 
+
+Port 22 
+
+-Depois so clicar em ctrl+X e depois digite yes para salvar o arquivo
+
+//Libere a porta 22 no firewall 
+
+ufw allow 22
+ufw allow 'ssh'
+
+//Reinicie o Servidor SSH
+
+systemctl restart ssh
+
+-Pronto, apos isso voce pode testar o servico no proprio linux usando o comando ssh ip do 
+servidor ssh, ou no windows usando o Putty

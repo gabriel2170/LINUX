@@ -1,0 +1,10 @@
+//Habilitar Hibernacao e Suspencao do Linux
+
+systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+
+
+
+//Reinicie o Servico de login 
+
+systemctl restart systemd-logind.service
